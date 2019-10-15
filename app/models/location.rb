@@ -6,5 +6,5 @@ class Location
   field :driver_id, type: Integer
   field :tracking_id, type: Integer
 
-  belongs_to :tracking
+  belongs_to :routing
 end
