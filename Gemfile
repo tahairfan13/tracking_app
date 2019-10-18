@@ -7,6 +7,7 @@ gem 'rails', '~> 5.2.3'
 gem 'puma', '~> 3.11'
 gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 4.0'
+gem "anycable-rails"
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'mongoid'
 gem 'warden'
