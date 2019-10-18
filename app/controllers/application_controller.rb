@@ -6,4 +6,5 @@ class ApplicationController < ActionController::API
       render json: {status: 401, message: request.env['warden'].message}
     end
   end
+
 end
