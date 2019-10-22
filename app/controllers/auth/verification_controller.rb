@@ -3,9 +3,8 @@ require 'json_web_token.rb'
 class Auth::VerificationController < ApplicationController
 
   def create
-    verification = Auth::Verification.where(secret_key: params[:secret_key])
-    if verification.length > 0
-      verification = verification[0]
+    verification = Auth::Verification.find_by(secret_key: params[:secret_key])
+    if verification
       token = JsonWebToken.encode(verification.secret_key)
       session = Auth::Session.new(token: token, verification_id: verification.id)
       if session.save
