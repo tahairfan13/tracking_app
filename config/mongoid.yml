@@ -5,14 +5,15 @@ development:
     default:
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
-      database: <%= ENV['DATABASE_NAME'] %>
+      database: test
       # Provides the hosts the default client can connect to. Must be an array
       # of host:port pairs. (required)
       hosts:
-        - <%= ENV['DATABASE_HOST'] %>
+        - ec2-54-212-2-169.us-west-2.compute.amazonaws.com:27017
       options:
-        user: <%= ENV['DATABASE_USERNAME'] %>
-        password: <%= ENV['DATABASE_PASSWORD'] %>
+        user: 'ziplyadmin'
+        password: '!ziply!'
+       # user: <%= ENV['DATABASE_USERNAME'] %>
 
         # Note that all options listed below are Ruby driver client options (the mongo gem).
         # Please refer to the driver documentation of the version of the mongo gem you are using
