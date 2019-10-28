@@ -3,15 +3,17 @@ module ApplicationCable
     identified_by :current_user
 
     def connect
-      self.current_user = find_verified_user
+      self.current_user = find_verified_user request.params[:token]
+      logger.add_tags 'ActionCable', current_user
     end
 
     private
-    def find_verified_user
-      if verified_user = Auth::Session.last
-        verified_user
+    def find_verified_user(token)
+      session = Auth::Session.find_by(token: token)
+      unless session.nil?
+        return session
       else
-        reject_unauthorized_connection
+        return reject_unauthorized_connection
       end
     end
   end

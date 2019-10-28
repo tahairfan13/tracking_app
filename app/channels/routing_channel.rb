@@ -1,16 +1,15 @@
 class RoutingChannel < ApplicationCable::Channel
   def subscribed
-     stream_from "route_channel"
+    stream_from "route_channel_#{params['job_code']}"
   end
 
   def unsubscribed
     stop_all_streams
   end
 
-  def send_message(data)
-    @routing = Routing.find_by(job_id: data["data"]["job_id"])
+  def send_location(data)
+    @routing = Routing.find_by(job_code: data["data"]["job_code"])
     location = @routing.locations.create(lat: data["data"]["lat"], long: data["data"]["long"], created_at: Time.now, driver_id: data["data"]["driver_id"])
-    ActionCable.server.broadcast 'route_channel', data: location
-    #RoutingChannelJob.perform(location)
+    RoutingChannelJob.perform_now(location, @routing.job_code)
   end
 end
