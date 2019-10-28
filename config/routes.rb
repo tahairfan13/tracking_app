@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   post '/hooks/:create_route', to: 'webhooks#create_route'
 
   namespace :auth do
-    post '/register', to: 'registration#create'
     post '/verification', to: 'verification#create'
   end
 
