@@ -1,6 +1,6 @@
 class Routing
   include Mongoid::Document
-  field :job_id, type: String
+  field :job_code, type: String
   field :start_time, type: Time
   field :end_time, type: Time
 

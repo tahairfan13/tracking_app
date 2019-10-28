@@ -18,5 +18,7 @@
 
 .byebug_history
 
+.elasticbeanstalk/saved_configs
+
 # Ignore master key for decrypting credentials and more.
-/config/master.key
+#/config/master.key

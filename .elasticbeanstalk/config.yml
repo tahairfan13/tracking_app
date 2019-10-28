@@ -1,0 +1,21 @@
+branch-defaults:
+  deployment:
+    environment: Production3
+  deployment_sec:
+    environment: production-ziply
+  integrate_anycable:
+    environment: ziply-tracking-dev
+global:
+  application_name: ziply-tracking
+  branch: null
+  default_ec2_keyname: ziply_tracking_dev
+  default_platform: Ruby 2.5 (Puma)
+  default_region: us-west-2
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: eb-cli
+  repository: null
+  sc: git
+  workspace_type: Application
