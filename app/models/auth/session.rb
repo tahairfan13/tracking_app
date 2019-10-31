@@ -4,7 +4,7 @@ class Auth::Session
   field :verification_id, type: Integer
 
   #associations
-  belongs_to :verification
+  belongs_to :project
 
   #validations
   validates :token, presence: true
