@@ -20,8 +20,15 @@ mongodb
 **Secret keys for the clients are supposed to be generated and distributed manually.**
 
 ```
-auth/verification
+POST    auth/verification
 ```
+body
+```
+{
+"secret_key": ENTER_THE_SECRET_KEY_YOU_ARE_PROVIDED_WITH
+}
+```
+
 The above endpoint will return you a token which you will use to access the websocket
 
 ## ActionCable Connection ##
