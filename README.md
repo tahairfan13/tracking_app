@@ -19,17 +19,17 @@ mongodb
 ## Authentication ##
 **Secret keys for the clients are supposed to be generated and distributed manually.**
 
+The following endpoint will return a token which will be used to access the websocket
 ```
-POST    auth/verification
+POST  auth/verification
 ```
-body
+send the provided secret key in body
 ```
 {
-"secret_key": ENTER_THE_SECRET_KEY_YOU_ARE_PROVIDED_WITH
+  "secret_key": YOUR_SECRET_KEY
 }
 ```
 
-The above endpoint will return you a token which you will use to access the websocket
 
 ## ActionCable Connection ##
 To connect to the ActionCable you would use the following consumer url
