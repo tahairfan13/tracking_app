@@ -6,6 +6,7 @@ class Routing
 
   #associations
   has_many :locations
+  belongs_to :session, class_name: 'Auth::Session'
 
   #validations
   validates :job_code, presence: true
