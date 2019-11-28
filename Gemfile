@@ -12,6 +12,7 @@ gem 'mongoid'
 gem 'warden'
 gem 'jwt'
 gem 'sidekiq', '~> 5.2', '>= 5.2.5'
+gem 'rack-cors'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
