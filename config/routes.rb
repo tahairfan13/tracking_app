@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   mount ActionCable.server, at: '/cable'
   post '/hooks/:create_route', to: 'webhooks#create_route'
 
+  resources :locations
+
   namespace :auth do
     post '/verification', to: 'verification#create'
   end
