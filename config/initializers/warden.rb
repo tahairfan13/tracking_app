@@ -6,7 +6,7 @@ Warden::Strategies.add(:token) do
     def authenticate!
       token = Auth::Session.where(token: params['token'])
       if token && token.length > 0
-        success! token
+        success! token[0]
       else
         fail "Invalid token"
       end

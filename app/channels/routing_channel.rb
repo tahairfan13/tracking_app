@@ -8,8 +8,8 @@ class RoutingChannel < ApplicationCable::Channel
   end
 
   def send_location(data)
-    @routing = Routing.find_by(job_code: data["data"]["job_code"])
-    location = @routing.locations.create(lat: data["data"]["lat"], long: data["data"]["long"], created_at: Time.now, driver_id: data["data"]["driver_id"])
+    @routing = Routing.find_by(job_code: data["job_code"])
+    location = @routing.locations.create(lat: data["lat"], long: data["long"], created_at: Time.now, driver_id: data["driver_id"])
     RoutingChannelJob.perform_now(location, @routing.job_code)
   end
 end
